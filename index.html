@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberGirl 2.0</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f3ff;
+    color:#20213a;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#4336b8,#8d5cf6);
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+header h1{
+    font-size:42px;
+    margin:0 0 8px;
+}
+
+header p{
+    margin:0;
+    font-size:18px;
+}
+
+/* NAV */
+
+nav{
+    background:white;
+    padding:14px;
+    text-align:center;
+    box-shadow:0 3px 12px #0002;
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+nav button{
+    border:0;
+    background:#6254df;
+    color:white;
+    padding:11px 16px;
+    margin:4px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+nav button:hover{
+    background:#4436bd;
+}
+
+/* PAGE */
+
+.page{
+    display:none;
+    max-width:950px;
+    margin:30px auto;
+    padding:0 18px;
+}
+
+.active{
+    display:block;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:20px;
+    box-shadow:0 6px 25px #0001;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:18px;
+}
+
+/* BUTTON */
+
+.main-btn{
+    background:#6254df;
+    color:white;
+    border:0;
+    padding:13px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.main-btn:hover{
+    background:#4538b9;
+}
+
+/* INPUT */
+
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    border:2px solid #ddd;
+    border-radius:12px;
+    margin:10px 0 15px;
+    font-size:16px;
+    outline:none;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#6254df;
+}
+
+/* PROFILE */
+
+.profile-box{
+    text-align:center;
+}
+
+.avatar{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#6254df,#9b6cff);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 15px;
+    font-size:40px;
+}
+
+.profile-name{
+    font-size:25px;
+    font-weight:bold;
+}
+
+/* SCORE */
+
+.score-box{
+    text-align:center;
+    padding:25px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#eeeaff,#f8f5ff);
+}
+
+.score{
+    font-size:55px;
+    font-weight:bold;
+    color:#5b4bd8;
+}
+
+.level{
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* PROGRESS */
+
+.progress{
+    width:100%;
+    height:18px;
+    background:#e4e2ee;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#6254df,#9b6cff);
+    transition:0.5s;
+}
+
+/* STAT */
+
+.stat{
+    text-align:center;
+    padding:20px;
+    border-radius:16px;
+    background:#f5f3ff;
+}
+
+.stat-icon{
+    font-size:35px;
+}
+
+.stat-number{
+    font-size:30px;
+    font-weight:bold;
+    color:#5546d8;
+}
+
+/* RESULT */
+
+.result{
+    padding:18px;
+    border-radius:12px;
+    margin-top:18px;
+    background:#eef0ff;
+}
+
+.good{
+    background:#e3f7e9;
+    color:#166534;
+}
+
+.warn{
+    background:#fff2cc;
+    color:#805b00;
+}
+
+.bad{
+    background:#ffe3e3;
+    color:#991b1b;
+}
+
+/* QUIZ */
+
+.opt{
+    display:block;
+    width:100%;
+    text-align:left;
+    background:#eeeaff;
+    color:#33277d;
+    border:0;
+    padding:14px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.opt:hover{
+    background:#dcd5ff;
+}
+
+/* HOME */
+
+.hero{
+    text-align:center;
+    padding:15px;
+}
+
+.hero-icon{
+    font-size:70px;
+}
+
+.feature{
+    text-align:center;
+}
+
+.feature-icon{
+    font-size:42px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+    background:#242044;
+    color:white;
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:32px;
+    }
+
+    nav button{
+        padding:9px 11px;
+        font-size:12px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🛡️ CyberGirl</h1>
+
+<p>Raqamli xavfsizlik yordamchisi</p>
+
+</header>
+
+
+<nav>
+
+<button onclick="go('home')">🏠 Bosh sahifa</button>
+
+<button onclick="go('profile')">👤 Profil</button>
+
+<button onclick="go('dashboard')">📊 Dashboard</button>
+
+<button onclick="go('pass')">🔐 Parol</button>
+
+<button onclick="go('url')">🔗 Havola</button>
+
+<button onclick="go('fish')">🎣 Fishing</button>
+
+<button onclick="go('quiz')">🧠 Quiz</button>
+
+<button onclick="go('tips')">🛡️ Tavsiyalar</button>
+
+</nav>
+
+
+<main>
+
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+<div class="card hero">
+
+<div class="hero-icon">🛡️</div>
+
+<h2>CyberGirl 2.0</h2>
+
+<p>
+Internet xavfsizligini tekshiring,
+bilimingizni sinang va o‘z CyberScore'ingizni yarating.
+</p>
+
+<button class="main-btn" onclick="go('profile')">
+👤 Profil yaratish
+</button>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card feature">
+
+<div class="feature-icon">🔐</div>
+
+<h3>Parol xavfsizligi</h3>
+
+<p>Parolingiz kuchini tekshiring.</p>
+
+<button class="main-btn" onclick="go('pass')">
+Tekshirish
+</button>
+
+</div>
+
+
+<div class="card feature">
+
+<div class="feature-icon">🔗</div>
+
+<h3>Havola xavfsizligi</h3>
+
+<p>Shubhali havolalarni aniqlang.</p>
+
+<button class="main-btn" onclick="go('url')">
+Tekshirish
+</button>
+
+</div>
+
+
+<div class="card feature">
+
+<div class="feature-icon">🎣</div>
+
+<h3>Fishing himoyasi</h3>
+
+<p>Shubhali xabarlarni tahlil qiling.</p>
+
+<button class="main-btn" onclick="go('fish')">
+Tahlil
+</button>
+
+</div>
+
+
+<div class="card feature">
+
+<div class="feature-icon">🧠</div>
+
+<h3>CyberQuiz</h3>
+
+<p>Bilimingizni sinab ko‘ring.</p>
+
+<button class="main-btn" onclick="go('quiz')">
+Boshlash
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROFILE -->
+
+<section id="profile" class="page">
+
+<div class="card profile-box">
+
+<div class="avatar">👩🏻‍💻</div>
+
+<h2>Cyber Profil</h2>
+
+<input
+id="username"
+placeholder="Ismingizni kiriting"
+>
+
+<button class="main-btn" onclick="createProfile()">
+Profil yaratish
+</button>
+
+<div id="profileResult" class="result">
+
+Profilingizni yarating.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+
+<section id="dashboard" class="page">
+
+<div class="card">
+
+<h2>📊 Cyber Security Dashboard</h2>
+
+<p id="welcome">
+Xush kelibsiz!
+</p>
+
+<div class="score-box">
+
+<div>Umumiy CyberScore</div>
+
+<div class="score" id="totalScore">
+0
+</div>
+
+<div class="level" id="level">
+🌱 Boshlovchi
+</div>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+</div>
+
+</div>
+
+<p>
+Xavfsizlik darajangiz
+</p>
+
+</div>
+
+</div>
+
+
+<div class="grid">
+
+<div class="stat">
+
+<div class="stat-icon">🔐</div>
+
+<div>Parol</div>
+
+<div class="stat-number" id="passScore">
+0
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">🔗</div>
+
+<div>Havola</div>
+
+<div class="stat-number" id="urlScore">
+0
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">🎣</div>
+
+<div>Fishing</div>
+
+<div class="stat-number" id="fishScore">
+0
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">🧠</div>
+
+<div>Bilim</div>
+
+<div class="stat-number" id="quizScore">
+0
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PASSWORD -->
+
+<section id="pass" class="page">
+
+<div class="card">
+
+<h2>🔐 Parol kuchini tekshirish</h2>
+
+<input
+id="p"
+type="password"
+placeholder="Parolni kiriting"
+>
+
+<button class="main-btn" onclick="password()">
+Tekshirish
+</button>
+
+<div id="pr" class="result">
+Natija shu yerda chiqadi.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- URL -->
+
+<section id="url" class="page">
+
+<div class="card">
+
+<h2>🔗 Havolani tekshirish</h2>
+
+<input
+id="u"
+placeholder="https://example.com"
+>
+
+<button class="main-btn" onclick="urlcheck()">
+Tekshirish
+</button>
+
+<div id="ur" class="result">
+Natija shu yerda chiqadi.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FISHING -->
+
+<section id="fish" class="page">
+
+<div class="card">
+
+<h2>🎣 Fishing xabarini tekshirish</h2>
+
+<textarea
+id="m"
+rows="7"
+placeholder="Xabarni shu yerga joylashtiring..."
+></textarea>
+
+<button class="main-btn" onclick="fishcheck()">
+Tahlil qilish
+</button>
+
+<div id="fr" class="result">
+Natija shu yerda chiqadi.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section id="quiz" class="page">
+
+<div class="card">
+
+<h2>🧠 CyberQuiz</h2>
+
+<div id="q"></div>
+
+</div>
+
+</section>
+
+
+<!-- TIPS -->
+
+<section id="tips" class="page">
+
+<div class="card">
+
+<h2>🛡️ Xavfsizlik tavsiyalari</h2>
+
+<ul>
+
+<li>Har bir akkaunt uchun alohida parol ishlating.</li>
+
+<li>2FA ni yoqing.</li>
+
+<li>Noma’lum havolalarni bosmang.</li>
+
+<li>Tasdiqlash kodlarini hech kimga bermang.</li>
+
+<li>Shubhali fayllarni yuklab olmang.</li>
+
+<li>Shaxsiy ma’lumotlarni begonalarga bermang.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+🛡️ CyberGirl — Raqamli xavfsizlikni o‘rganamiz
+
+</footer>
+
+
+<script>
+
+/* =========================
+   ASOSIY MA'LUMOTLAR
+========================= */
+
+let userName = "";
+
+let scores = {
+
+    password: 0,
+
+    url: 0,
+
+    fishing: 0,
+
+    quiz: 0
+
+};
+
+
+/* =========================
+   SAHIFALAR
+========================= */
+
+function go(x){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(e => e.classList.remove("active"));
+
+    document
+    .getElementById(x)
+    .classList.add("active");
+
+    window.scrollTo(0,0);
+
+    updateDashboard();
+}
+
+
+/* =========================
+   PROFIL
+========================= */
+
+function createProfile(){
+
+    let name =
+    document.getElementById("username")
+    .value
+    .trim();
+
+    if(!name){
+
+        document.getElementById("profileResult").className =
+        "result warn";
+
+        document.getElementById("profileResult").textContent =
+        "⚠️ Avval ismingizni kiriting.";
+
+        return;
+
+    }
+
+    userName = name;
+
+    document.getElementById("profileResult").className =
+    "result good";
+
+    document.getElementById("profileResult").textContent =
+    "✅ Xush kelibsiz, " + userName + "!";
+
+    updateDashboard();
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+function updateDashboard(){
+
+    document.getElementById("passScore").textContent =
+    scores.password;
+
+    document.getElementById("urlScore").textContent =
+    scores.url;
+
+    document.getElementById("fishScore").textContent =
+    scores.fishing;
+
+    document.getElementById("quizScore").textContent =
+    scores.quiz;
+
+
+    let total =
+    Math.round(
+        (
+            scores.password +
+            scores.url +
+            scores.fishing +
+            scores.quiz
+        ) / 4
+    );
+
+
+    document.getElementById("totalScore").textContent =
+    total;
+
+
+    document.getElementById("progressBar").style.width =
+    total + "%";
+
+
+    let level =
+    document.getElementById("level");
+
+
+    if(total >= 90){
+
+        level.textContent =
+        "👑 CyberGirl Expert";
+
+    }
+
+    else if(total >= 75){
+
+        level.textContent =
+        "🔐 Cyber Defender";
+
+    }
+
+    else if(total >= 50){
+
+        level.textContent =
+        "🛡️ Himoyachi";
+
+    }
+
+    else{
+
+        level.textContent =
+        "🌱 Boshlovchi";
+
+    }
+
+
+    document.getElementById("welcome").textContent =
+    userName
+    ? "👋 Xush kelibsiz, " + userName + "!"
+    : "👋 Avval profil yarating.";
+}
+
+
+/* =========================
+   PAROL
+========================= */
+
+function password(){
+
+    let x =
+    document.getElementById("p")
+    .value;
+
+    let s = 0;
+
+
+    if(x.length >= 8) s++;
+
+    if(x.length >= 12) s++;
+
+    if(/[A-Z]/.test(x)) s++;
+
+    if(/[a-z]/.test(x)) s++;
+
+    if(/[0-9]/.test(x)) s++;
+
+    if(/[^A-Za-z0-9]/.test(x)) s++;
+
+
+    let result =
+    document.getElementById("pr");
+
+
+    if(x.length < 8){
+
+        scores.password = 25;
+
+        result.className =
+        "result bad";
+
+        result.textContent =
+        "❌ Zaif parol. Kamida 8 ta belgidan foydalaning.";
+
+    }
+
+    else if(s >= 5){
+
+        scores.password = 100;
+
+        result.className =
+        "result good";
+
+        result.textContent =
+        "✅ Kuchli parol! CyberScore: 100/100";
+
+    }
+
+    else{
+
+        scores.password = 60;
+
+        result.className =
+        "result warn";
+
+        result.textContent =
+        "⚠️ O‘rtacha parol. CyberScore: 60/100";
+
+    }
+
+
+    updateDashboard();
+
+}
+
+
+/* =========================
+   URL
+========================= */
+
+function urlcheck(){
+
+    let x =
+    document.getElementById("u")
+    .value
+    .trim();
+
+    let a = [];
+
+
+    if(!x){
+
+        scores.url = 0;
+
+        let result =
+        document.getElementById("ur");
+
+        result.className =
+        "result warn";
+
+        result.textContent =
+        "⚠️ Havola kiriting.";
+
+        updateDashboard();
+
+        return;
+
+    }
+
+
+    if(!x.startsWith("https://"))
+    a.push("HTTPS yo‘q");
+
+
+    if(/@|xn--/i.test(x))
+    a.push("shubhali domen belgisi");
+
+
+    if(/login|verify|confirm|urgent|bonus|gift|free|password/i.test(x))
+    a.push("shubhali kalit so‘z");
+
+
+    let result =
+    document.getElementById("ur");
+
+
+    if(a.length >= 2){
+
+        scores.url = 20;
+
+        result.className =
+        "result bad";
+
+        result.textContent =
+        "🚨 Shubhali havola. CyberScore: 20/100";
+
+    }
+
+    else if(a.length){
+
+        scores.url = 60;
+
+        result.className =
+        "result warn";
+
+        result.textContent =
+        "⚠️ Ehtiyot bo‘ling. CyberScore: 60/100";
+
+    }
+
+    else{
+
+        scores.url = 100;
+
+        result.className =
+        "result good";
+
+        result.textContent =
+        "✅ Aniq xavf belgisi topilmadi. CyberScore: 100/100";
+
+    }
+
+
+    updateDashboard();
+
+}
+
+
+/* =========================
+   FISHING
+========================= */
+
+function fishcheck(){
+
+    let x =
+    document.getElementById("m")
+    .value
+    .toLowerCase();
+
+    let n = 0;
+
+
+    if(/parol|password|kod|code|karta|card|cvv/.test(x))
+    n++;
+
+
+    if(/sovrin|bonus|yutuq|bepul|pul/.test(x))
+    n++;
+
+
+    if(/shoshil|tez|urgent|darhol|hozir/.test(x))
+    n++;
+
+
+    if(/http|www|havola|link/.test(x))
+    n++;
+
+
+    let result =
+    document.getElementById("fr");
+
+
+    if(!x){
+
+        scores.fishing = 0;
+
+        result.className =
+        "result warn";
+
+        result.textContent =
+        "⚠️ Xabar kiriting.";
+
+    }
+
+    else if(n >= 2){
+
+        scores.fishing = 100;
+
+        result.className =
+        "result good";
+
+        result.textContent =
+        "🛡️ Fishingni aniqladingiz! Himoya balli: 100/100";
+
+    }
+
+    else if(n == 1){
+
+        scores.fishing = 60;
+
+        result.className =
+        "result warn";
+
+        result.textContent =
+        "⚠️ Shubhali belgi mavjud. Ball: 60/100";
+
+    }
+
+    else{
+
+        scores.fishing = 40;
+
+        result.className =
+        "result warn";
+
+        result.textContent =
+        "ℹ️ Kuchli fishing belgisi topilmadi. Ball: 40/100";
+
+    }
+
+
+    updateDashboard();
+
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+let qs = [
+
+[
+"Noma’lum odam parol so‘rasa nima qilamiz?",
+["Beraman","Bermayman"],
+1
+],
+
+[
+"Bir xil parolni hamma joyda ishlatish xavfsizmi?",
+["Ha","Yo‘q"],
+1
+],
+
+[
+"2FA nima beradi?",
+["Qo‘shimcha himoya","Internet tezligi"],
+0
+],
+
+[
+"Shubhali havolada nima qilamiz?",
+["Darhol bosamiz","Manzilini tekshiramiz"],
+1
+]
+
+];
+
+
+let qi = 0;
+
+let quizCorrect = 0;
+
+
+function quiz(){
+
+    let z = qs[qi];
+
+    document.getElementById("q").innerHTML =
+
+    "<h3>" +
+    (qi + 1) +
+    ". " +
+    z[0] +
+    "</h3>" +
+
+    z[1]
+    .map(
+        (a,i) =>
+        '<button class="opt" onclick="ans(' +
+        i +
+        ')">' +
+        a +
+        '</button>'
+    )
+    .join("");
+
+}
+
+
+function ans(i){
+
+    if(i == qs[qi][2])
+    quizCorrect++;
+
+
+    qi++;
+
+
+    if(qi < qs.length){
+
+        quiz();
+
+    }
+
+    else{
+
+        scores.quiz =
+        Math.round(
+            quizCorrect /
+            qs.length *
+            100
+        );
+
+
+        document.getElementById("q").innerHTML =
+
+        "<h3>🎉 Test tugadi!</h3>" +
+
+        "<p>Natijangiz: <b>" +
+        quizCorrect +
+        "/" +
+        qs.length +
+        "</b></p>" +
+
+        "<p>🧠 CyberScore: <b>" +
+        scores.quiz +
+        "/100</b></p>" +
+
+        '<button class="main-btn" onclick="restartQuiz()">' +
+        "Qayta ishlash" +
+        "</button>";
+
+
+        updateDashboard();
+
+    }
+
+}
+
+
+function restartQuiz(){
+
+    qi = 0;
+
+    quizCorrect = 0;
+
+    quiz();
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+quiz();
+
+updateDashboard();
+
+</script>
+
+</body>
+</html>
